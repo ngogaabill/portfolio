@@ -1,6 +1,6 @@
 package com.pluralsight.fixedAsset;
 
-public class Jewelry extends Asset {
+public class Jewelry extends FixedAsset {
     private double karat;
 
     public Jewelry(String name, double value, double karat) {

@@ -1,6 +1,6 @@
 package com.pluralsight.fixedAsset;
 
-public class House extends Asset {
+public class House extends FixedAsset {
     private int yearBuilt;
     private int squareFeet;
     private int bedrooms;
@@ -12,8 +12,26 @@ public class House extends Asset {
         this.bedrooms = bedrooms;
     }
 
+    public int getBedrooms() {
+        return bedrooms;
+    }
+
+    public int getSquareFeet() {
+        return squareFeet;
+    }
+
+    public int getYearBuilt() {
+        return yearBuilt;
+    }
+
+    @Override
+    public String toString() {
+        return getName() + " - $" + getValue();
+    }
+
     @Override
     public double getValue() {
-        return 0;
+        int pricePerFeet = 100;
+        return squareFeet * 100; //200 * 100 = 20000
     }
 }
