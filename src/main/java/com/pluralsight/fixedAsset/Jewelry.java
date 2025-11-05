@@ -9,7 +9,14 @@ public class Jewelry extends FixedAsset {
     }
 
     @Override
+    public String toString() {
+        return "Jewelry{" +
+                "Cost =" + getValue() +
+                '}';
+    }
+
+    @Override
     public double getValue() {
-        return 0;
+        return getMarketValue();
     }
 }

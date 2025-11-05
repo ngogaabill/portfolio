@@ -2,9 +2,9 @@ package com.pluralsight.fixedAsset;
 
 
 import com.pluralsight.finance.BankAccount;
+import com.pluralsight.finance.CreditCard;
 import com.pluralsight.finance.Valuable;
 
-import javax.xml.namespace.QName;
 import java.awt.*;
 import java.util.Scanner;
 
@@ -18,19 +18,9 @@ public class FinanceApplication {
         System.out.println("Enter Owner:");
         String owner = scanner.nextLine();
         Portfolio myPortfolio = new Portfolio(name, owner);
-
-        BankAccount account1 = new BankAccount("Pam", "123", 1500);
-        Valuable account2 = new BankAccount("Gary", "232", 1500);
-        account1.deposit(100);
-        account1.withdaw(200);
-        ((BankAccount) account2).deposit(100);
-        //Add both to the List of Valuables
-        myPortfolio.add(account1);
-        myPortfolio.add(account2);
-
         Menu(myPortfolio);
 
-        System.out.println("Total Portfolio Value: " + myPortfolio.getValue());//(1500+1500+20000+1000)=24000
+        System.out.println("Total Net Worth: " + myPortfolio.getValue());//(1500+1500+20000+1000)=24000
         System.out.println("Highest Valuable: " + myPortfolio.getMostValuable().toString());
         System.out.println("Least Valuable: " + myPortfolio.getLeastValuable().toString());
     }
@@ -56,13 +46,13 @@ public class FinanceApplication {
                     addGold(portfolio);
                     break;
                 case 3:
-                    addJewelry();
+                    addJewelry(portfolio);
                     break;
                 case 4:
-                    addBankAccount();
+                    addBankAccount(portfolio);
                     break;
                 case 5:
-                    addCreditCard();
+                    addCreditCard(portfolio);
                     break;
                 case 0:
                     exit = true;
@@ -103,20 +93,33 @@ public class FinanceApplication {
 //        System.out.println("Name:");
 //        System.out.println("Value:");
 //        double value = Double.parseDouble(scanner.nextLine());
-      //  Gold gold = new Gold(name, value, weight);
+        //  Gold gold = new Gold(name, value, weight);
 
         Gold gold = new Gold("IphoneCase", 1000, 3);
         portfolio.add(gold);
 
     }
 
-    private static void addJewelry() {
+    private static void addJewelry(Portfolio portfolio) {
+        Jewelry chain = new Jewelry("Neck Wear", 1000.0, 99.9);
+        portfolio.add(chain);
     }
 
-    private static void addBankAccount() {
+    private static void addBankAccount(Portfolio portfolio) {
+        BankAccount account1 = new BankAccount("Pam", "123", 1500);
+        Valuable account2 = new BankAccount("Gary", "232", 1500);
+        account1.deposit(100);
+        account1.withdaw(200);
+        ((BankAccount) account2).deposit(100);
+        //Add both to the List of Valuables
+        portfolio.add(account1);
+        portfolio.add(account2);
     }
 
-    private static void addCreditCard() {
+    private static void addCreditCard(Portfolio portfolio) {
+        CreditCard creditCard = new CreditCard("ChaseBank", "A232e", 300);
+        creditCard.pay(50);
+        portfolio.add(creditCard);
     }
 
 }

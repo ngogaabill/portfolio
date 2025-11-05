@@ -27,4 +27,9 @@ public class BankAccount implements Valuable {
     public double getValue() {
         return balance;
     }
+
+    @Override
+    public String toString() {
+        return name + " - $ " + getValue();
+    }
 }

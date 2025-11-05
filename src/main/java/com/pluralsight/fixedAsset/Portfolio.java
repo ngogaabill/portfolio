@@ -3,6 +3,7 @@ package com.pluralsight.fixedAsset;
 import com.pluralsight.finance.Valuable;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Portfolio {
@@ -48,12 +49,11 @@ public class Portfolio {
         return lowValue;
     }
 
-//    @Override
-//    public String toString() {
-//        return "Portfolio{" +
-//                "name='" + name + '\'' +
-//                ", owner='" + owner + '\'' +
-//                ", assets=" + valuables +
-//                '}';
-//    }
+    @Override
+    public String toString() {
+        return "Portfolio{" +
+                "name='" + name + '\'' +
+                ", owner='" + owner + '\'' + ", assets=" + valuables +
+                '}';
+    }
 }
