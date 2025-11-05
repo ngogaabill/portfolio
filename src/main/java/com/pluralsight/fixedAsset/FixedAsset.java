@@ -2,7 +2,7 @@ package com.pluralsight.fixedAsset;
 
 import com.pluralsight.finance.Valuable;
 
-public abstract class FixedAsset implements Valuable {
+public abstract class FixedAsset implements Valuable{
     private String name;
     private double marketValue;
 

@@ -21,11 +21,16 @@ public class CreditCard implements Valuable {
 
     @Override
     public double getValue() {
-        return balance;
+        return balance * -1;//make credit neg
     }
 
     @Override
     public String toString() {
         return name + " - $ " + getValue();
+    }
+
+    @Override
+    public int compareTo(Valuable o) {
+        return Double.compare(this.getValue(),o.getValue());
     }
 }

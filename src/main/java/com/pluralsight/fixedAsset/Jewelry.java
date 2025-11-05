@@ -1,5 +1,7 @@
 package com.pluralsight.fixedAsset;
 
+import com.pluralsight.finance.Valuable;
+
 public class Jewelry extends FixedAsset {
     private double karat;
 
@@ -18,5 +20,11 @@ public class Jewelry extends FixedAsset {
     @Override
     public double getValue() {
         return getMarketValue();
+    }
+
+
+    @Override
+    public int compareTo(Valuable o) {
+        return Double.compare(this.getValue(),o.getValue());
     }
 }

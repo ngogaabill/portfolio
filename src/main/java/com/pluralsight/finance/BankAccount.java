@@ -32,4 +32,9 @@ public class BankAccount implements Valuable {
     public String toString() {
         return name + " - $ " + getValue();
     }
+
+    @Override
+    public int compareTo(Valuable o) {
+        return Double.compare(this.getValue(),o.getValue());
+    }
 }

@@ -6,6 +6,7 @@ import com.pluralsight.finance.CreditCard;
 import com.pluralsight.finance.Valuable;
 
 import java.awt.*;
+import java.util.Collection;
 import java.util.Scanner;
 
 public class FinanceApplication {
@@ -118,7 +119,7 @@ public class FinanceApplication {
 
     private static void addCreditCard(Portfolio portfolio) {
         CreditCard creditCard = new CreditCard("ChaseBank", "A232e", 300);
-        creditCard.pay(50);
+        creditCard.pay(100);
         portfolio.add(creditCard);
     }
 

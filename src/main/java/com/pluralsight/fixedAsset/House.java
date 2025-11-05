@@ -1,5 +1,7 @@
 package com.pluralsight.fixedAsset;
 
+import com.pluralsight.finance.Valuable;
+
 public class House extends FixedAsset {
     private int yearBuilt;
     private int squareFeet;
@@ -33,5 +35,10 @@ public class House extends FixedAsset {
     public double getValue() {
         int pricePerFeet = 100;
         return squareFeet * 100; //200 * 100 = 20000
+    }
+
+    @Override
+    public int compareTo(Valuable o) {
+        return Double.compare(this.getValue(),o.getValue());
     }
 }

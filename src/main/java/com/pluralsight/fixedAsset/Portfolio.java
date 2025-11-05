@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+
 public class Portfolio {
     private String name;
     private String owner;
@@ -19,6 +20,7 @@ public class Portfolio {
 
     public void add(Valuable valuable) {
         valuables.add(valuable);
+        Collections.sort(valuables);
     }
 
     public double getValue() {
@@ -30,13 +32,7 @@ public class Portfolio {
     }
 
     public Valuable getMostValuable() {
-        Valuable highValuble = valuables.get(0);
-        for (int i = 1; i < valuables.size(); i++) {
-            if (valuables.get(i).getValue() > highValuble.getValue()) {
-                highValuble = valuables.get(i);
-            }
-        }
-        return highValuble;
+       return Collections.max(valuables);
     }
 
     public Valuable getLeastValuable() {

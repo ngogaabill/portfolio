@@ -1,5 +1,7 @@
 package com.pluralsight.fixedAsset;
 
+import com.pluralsight.finance.Valuable;
+
 public class Gold extends FixedAsset {
     private double weight;
 
@@ -17,5 +19,11 @@ public class Gold extends FixedAsset {
     @Override
     public double getValue() {
         return getMarketValue();
+    }
+
+
+    @Override
+    public int compareTo(Valuable o) {
+        return Double.compare(this.getValue(),o.getValue());
     }
 }
